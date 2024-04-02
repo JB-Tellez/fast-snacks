@@ -10,7 +10,7 @@ COPY ./app /code/app
 
 EXPOSE 8000
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0"]
 
 # If running behind a proxy like Nginx or Traefik add --proxy-headers
 # CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80", "--proxy-headers"]
