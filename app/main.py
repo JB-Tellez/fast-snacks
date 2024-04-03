@@ -99,7 +99,7 @@ def update_snack(snack_id: str, snack: Snack):
 origins = [
     "http://localhost",
     "http://localhost:3000",
-    "https://nuxt-snacks.vercel.app/",
+    "https://nuxt-snacks.vercel.app",
 ]
 
 app.add_middleware(
