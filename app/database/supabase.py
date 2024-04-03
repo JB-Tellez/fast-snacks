@@ -1,5 +1,5 @@
 from supabase import Client, create_client
-from config import api, url
+from app.config import api, url
 
 api_url: str = url
 key: str = api

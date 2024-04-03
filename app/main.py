@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.models import Snack
-from db.supabase import create_supabase_client
+from app.database.supabase import create_supabase_client
 
 from fastapi.middleware.cors import CORSMiddleware
 
