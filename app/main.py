@@ -37,14 +37,14 @@ def read_snacks():
         snacks = supabase.from_("snacks")\
                     .select("id", "name", "description")\
                     .execute()
-        
+
         if snacks:
             return snacks
-        
+
     except Exception as e:
         print("Error: ", e)
         return {"message": "Snack creation error"}
-    
+
 @app.get('/snacks/{snack_id}')
 def read_snack(snack_id: str):
     try:
@@ -55,15 +55,15 @@ def read_snack(snack_id: str):
 
         if snack:
             return snack
-        
+
     except Exception as e:
         print(f"Error: {e}")
         return {"message": "Snack not found"}
-    
+
 # Delete a snack
 @app.delete("/snacks/{snack_id}")
 def delete_snack(snack_id: str):
-    try:        
+    try:
         # Check if snack exists
         if snack_exists("id", snack_id):
             # Delete snack
@@ -77,7 +77,7 @@ def delete_snack(snack_id: str):
     except Exception as e:
         print(f"Error: {e}")
         return {"message": "Snack deletion failed"}
-    
+
 # Update a snack
 @app.put("/snacks/{snack_id}")
 def update_snack(snack_id: str, snack: Snack):
@@ -93,12 +93,13 @@ def update_snack(snack_id: str, snack: Snack):
     except Exception as e:
         print(f"Error: {e}")
         return {"message": "Snack update failed"}
-    
 
-# Add CORS after routes
+
+# Add CORS after routesn(may not be necessary but was having CORS issues and this was a recommendation)
 origins = [
     "http://localhost",
     "http://localhost:3000",
+    "http://localhost:5173",
     "https://nuxt-snacks.vercel.app",
 ]
 
