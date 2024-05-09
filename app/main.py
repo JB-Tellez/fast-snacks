@@ -101,6 +101,7 @@ origins = [
     "http://localhost:3000",
     "http://localhost:5173",
     "https://nuxt-snacks.vercel.app",
+    "https://remix-snacks.vercel.app",
 ]
 
 app.add_middleware(
