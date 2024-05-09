@@ -97,11 +97,13 @@ def update_snack(snack_id: str, snack: Snack):
 
 # Add CORS after routesn(may not be necessary but was having CORS issues and this was a recommendation)
 origins = [
-    "http://localhost",
-    "http://localhost:3000",
-    "http://localhost:5173",
-    "https://nuxt-snacks.vercel.app",
-    "https://remix-snacks.vercel.app",
+    "*", # for the moment, allow all origins
+
+    # "http://localhost",
+    # "http://localhost:3000",
+    # "http://localhost:5173",
+    # "https://nuxt-snacks.vercel.app",
+    # "https://remix-snacks.vercel.app",
 ]
 
 app.add_middleware(
